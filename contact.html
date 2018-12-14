@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title> MESS MANAGEMENT </title>
+<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+ 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" />
+  <link rel="stylesheet" href="assets/style.css"/>
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="assets/bootstrap/js/bootstrap.js"></script>
+  <script src="assets/script.js"></script>
+<!-- Owl stylesheet -->
+<link rel="stylesheet" href="assets/owl-carousel/owl.carousel.css">
+<link rel="stylesheet" href="assets/owl-carousel/owl.theme.css">
+<script src="assets/owl-carousel/owl.carousel.js"></script>
+<!-- Owl stylesheet -->
+<!-- slitslider -->
+    <link rel="stylesheet" type="text/css" href="assets/slitslider/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/slitslider/css/custom.css" />
+    <script type="text/javascript" src="assets/slitslider/js/modernizr.custom.79639.js"></script>
+    <script type="text/javascript" src="assets/slitslider/js/jquery.ba-cond.min.js"></script>
+    <script type="text/javascript" src="assets/slitslider/js/jquery.slitslider.js"></script>
+<!-- slitslider -->
+<script type="text/javascript">
+function validateForm() {
+    var x = document.forms["myForm"]["first"].value;
+    if (x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+    var y;
+    var x = document.forms["myForm"]["contact"].value;
+var y = document.forms["myForm"]["message"].value;
+    if (isNaN(x) || !(x > 999999999 && x < 10000000000)) {
+         alert("contact no must be a 10 digit number");
+        return false;
+    }
+	else if (y == "") {
+        alert("enter your suggestion");
+        return false;
+    }
+	else {
+	alert("submitted successfully");
+	return true;
+    }
+}
+</script>
+<style>
+#map {
+  height: 400px;
+  width: 100%;
+ }
+</style>
+</head>
+<body>
+<!-- Header Starts -->
+
+<!-- #Header Starts -->
+<div class="container">
+<!-- Header Starts -->
+
+<div >
+<img src="http://jobsamosa.com/wp-content/uploads/2014/07/Visvesvaraya-National-Institute-of-Technology.png"  style="width:175px;height:140px; position: relative; float: left;"><br><br>
+<p style="text-align:center;"><font size="25" color="#00000">VISVESVARAYA NATIONAL INSTITUTE  OF <br> <br> 
+   TECHNOLOGY</font></p>
+</div>           
+
+<!-- #Header Starts -->
+
+<div class="inside-banner">
+  <div class="container"> 
+    <h2>Contact Us</h2>
+</div>
+</div>
+
+</div><!-- banner -->
+<div class="navbar-wrapper">
+        <div class="navbar-inverse" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <!-- Nav Starts -->
+            <div class="navbar-collapse  collapse">
+              <ul class="nav navbar-nav navbar-right">
+               <li ><a href="home.html">HOME</a></li>
+                <li><a href="agents.html">MESS COMMITEE</a></li>         
+                <li><a href="displaymenu.php">Mess Menu</a></li>
+                <li class="active"><a href="contact.html">CONTACT US</a></li>
+				<li><a href="signup.html">REGISTER</a></li>
+				
+				
+				<li>
+				<div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Login
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="login.html">STUDENT LOGIN</a></li>
+      <li><a href="admin_login.php">ADMIN LOGIN</a></li>
+    </ul>
+  </div>
+</div>
+</li>
+				
+				
+              </ul>
+            </div>
+            <!-- #Nav Ends -->
+
+          </div>
+        </div>
+
+    </div>
+
+
+<div class="container">
+<div class="spacer">
+<div class="row contact">
+  <div class="col-lg-6 col-sm-6 ">
+<form name="myForm" onsubmit="return validateForm()" action="pcontacts.php" method="post">
+                <input type="text" name="first" class="form-control" placeholder="Full Name">
+                <input type="text" name="email" class="form-control" placeholder="Email Address">
+                <input type="text" name="contact" class="form-control" placeholder="Contact Number">
+                <textarea rows="6" name="message" class="form-control" placeholder="Message"></textarea>
+      <button type="submit" class="btn btn-success" name="Submit">Send Message</button>
+</form>          
+        </div>
+  <div class="col-lg-6 col-sm-6 ">
+  <!--<div class="well"><iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="map.png"></iframe></div>-->
+  <div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: 21.1232, lng: 79.0515};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwjvp-gyX6hbfjdQiWYev7ct3LAY6Vmz4&callback=initMap">
+    </script>
+  </div>
+</div>
+</div>
+</div>
+<div class="footer">
+<div class="container">
+<div class="row">
+            <div class="col-lg-3 col-sm-3">
+                   <h4>Information</h4>
+                   <ul class="row">
+                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="about.php">About</a></li>
+                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="agents.php">Agents</a></li>         
+                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="blog.php">Blog</a></li>
+                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="contact.php">Contact</a></li>
+              </ul>
+            </div>
+             <div class="col-lg-3 col-sm-3">
+                    <h4>Contact us</h4>
+                    <p><b>VNIT MESS COMMITEE</b><br>
+<span class="glyphicon glyphicon-map-marker"></span> vnit,south ambazari road,nagpur <br>
+<span class="glyphicon glyphicon-envelope"></span> getphanesh@gmail.com<br>
+<span class="glyphicon glyphicon-earphone"></span> 8007323374</p>
+            </div>
+        </div>
+</div></div>
+</body>
+</html>

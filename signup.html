@@ -1,0 +1,482 @@
+<!DOCTYPE HTML>
+<html>
+<body 
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<div >
+<img src="http://jobsamosa.com/wp-content/uploads/2014/07/Visvesvaraya-National-Institute-of-Technology.png"  style="width:175px;height:140px; position: relative; float: left;"><br><br>
+<font size="25" color="#00000" style=" align :centre; ">VISVESVARAYA NATIONAL INSTITUTE  OF <br> <br> 
+   TECHNOLOGY</font>
+</div>
+
+
+
+<head>
+<title>hostel mess registration form</title>
+<style>
+*{
+	margin:0px;
+	padding:0px;
+	}
+body{
+	font-family:Tahoma, Geneva, sans-serif;
+background-image: url(http://getmyuni.azureedge.net/college-image/big/visvesaraya-national-institute-of-technology-vnit-nagpur.jpg); 
+-moz-background-size: cover;
+-webkit-background-size: cover;
+background-size: cover;
+background-position: top center !important;
+background-repeat: no-repeat !important;
+background-attachment: fixed;
+	}
+#container{
+	width:550px;
+	background-color:rgba(250,250,252,.9);
+	margin:auto;
+	margin-top:10px;
+	margin-bottom:10px;
+	box-shadow:0 0 3px #999;
+                   opacity: 0.8;
+	}
+#container_body{
+	padding:20px;
+	}
+.form_title{
+	font-size:35px;
+	color:#141823;
+	text-align:center;
+	padding:10px;
+	font-weight:normal;
+	}
+.head_para{
+	font-size:19px;
+	color:#99a2a7;
+	text-align:center;
+	font-weight:normal;
+	}
+#form_name{
+	padding:25px 0 0 15px;
+	}
+.firstnameorlastname{
+	 margin-right:20px;
+	}
+.input_name{
+	width:207px;
+	padding:5px;
+	font-size:18px;
+	}
+	
+	#uid{
+	padding:15px 0 10px 0px;
+	}
+.uid{
+	width:434px;
+	padding:5px;
+	font-size:18px;
+	}
+	
+#email_form{
+	padding:15px 0 10px 0px;
+	}
+.input_email{
+	width:434px;
+	padding:5px;
+	font-size:18px;
+	}
+
+#password_form{
+	padding:10px 0 10px 0px;
+	}
+.input_password{
+	width:434px;
+	padding:5px;
+	font-size:18px;
+	}
+#Re_password_form{
+	padding:10px 0 10px 0px;
+	}
+.input_Re_password{
+	width:434px;
+	padding:5px;
+	font-size:18px;
+	}
+.birthday_title{
+	font-size:16px; 
+	color:#8b919d; 
+	font-weight:normal;
+	padding:0 0 10px 0;
+	}
+select{
+	padding:5px;
+	}
+#birthday{
+	font-size:12px;
+	color:#8b919d;
+	padding-top:10px;
+	}
+#radio_button{
+	padding:10px 0 0 0;
+	}
+#sign_user{
+	font-size:14px;
+	color:#FFF;
+	text-align:center;
+	background-color:#3B5998;
+	width:475px;
+	padding:10px;
+	margin-top:10px;
+	cursor: pointer;
+	}
+#errorBox{
+	color:#F00;
+	}
+
+
+
+</style>
+<script>
+function Submit(){
+	var emailRegex = /^[A-Za-z0-9._]*\@[A-Za-z]*\.[A-Za-z]{2,5}$/;
+	var fnameRegex=/[^A-Za-z\s]/;
+	var fname = document.form.Name.value,
+		lname = document.form.LastName.value,
+		femail = document.form.Email.value,
+		
+		fpassword = document.form.Password.value,
+		frpassword = document.form.enterpassword.value,
+		fmonth = document.form.birthday_month.value,
+		fday = document.form.birthday_day.value,
+		fyear = document.form.birthday_year.value;
+		
+	if( fname == "" )
+   {
+     alert("First Name can't be blank");  
+  return false;  
+   }
+else if(fnameRegex.test(fname)){
+		alert("Enter a valid First Name");  
+  return false;  
+	 }
+	if( lname == "" )
+   {
+      alert("Last Name can't be blank");  
+  return false;  
+   }
+else if(fnameRegex.test(lname)){
+		alert("Enter a valid Last Name");  
+  return false;  
+	 }
+   
+   if (femail == "" )
+	{
+		alert("Enter your email id");  
+  return false; 
+	 }else if(!emailRegex.test(femail)){
+		alert("Enter a valid Email id");  
+  return false;  
+	 }
+	 
+	 
+	 
+	if(fpassword == "")
+	 {
+		 alert("Password can't be blank");  
+  return false; 
+	 }
+	 
+
+ if (frpassword == "" )
+	{
+		alert("Re-enter Password");  
+  return false;
+	 }
+	 
+	 if(frpassword !=  fpassword){
+		 alert("Passwords are not matching");  
+  return false;
+		 }
+	 
+		 if (fmonth == "") {
+        alert("Select your hostel block");  
+  return false;
+     }
+	 if (fday == "") {
+        alert("Select your branch");  
+  return false;
+     }
+	 if (fyear == "") {
+        dalert("Select your year of study");  
+  return false;
+     }
+		if(document.form.radiobutton[0].checked == false && document.form.radiobutton[1].checked == false){
+				alert("Select your gender");  
+  return false;
+			}
+		if(fname != '' && lname != '' && femail != '' && frpassword != '' && fpassword != '' && fmonth != '' && fday != '' && fyear != ''){
+			document.getElementById("errorBox").innerHTML = "form submitted successfully";
+			}
+
+
+		  
+}
+
+</script>
+
+
+<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+ 	
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" />
+  <link rel="stylesheet" href="assets/style.css"/>
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.js"></script>
+  <script src="assets/script.js"></script>
+  <link rel="stylesheet" href="assets/style.css"/>
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="assets/bootstrap/js/bootstrap.js"></script>
+  <script src="assets/script.js"></script>
+
+
+
+
+<link rel="stylesheet" href="assets/owl-carousel/owl.carousel.css">
+<link rel="stylesheet" href="assets/owl-carousel/owl.theme.css">
+<script src="assets/owl-carousel/owl.carousel.js"></script>
+
+
+
+
+    <link rel="stylesheet" type="text/css" href="assets/slitslider/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/slitslider/css/custom.css" />
+    <script type="text/javascript" src="assets/slitslider/js/modernizr.custom.79639.js"></script>
+    <script type="text/javascript" src="assets/slitslider/js/jquery.ba-cond.min.js"></script>
+    <script type="text/javascript" src="assets/slitslider/js/jquery.slitslider.js"></script>
+
+
+
+</head>
+
+<body>
+
+
+
+<!-- Header Starts -->
+<div class="header">
+
+</div>
+<!-- #Header Starts -->
+</div><!-- banner -->
+<div class="inside-banner">
+  <div class="container"> 
+    
+    <h2>SIGN UP</h2>
+</div>
+</div>
+
+
+<div class="navbar-wrapper">
+
+        <div class="navbar-inverse" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+
+
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+            </div>
+			
+			
+
+
+ <!-- Nav Starts -->
+            <div class="navbar-collapse  collapse">
+              <ul class="nav navbar-nav navbar-right">
+               <li ><a href="home.html">Home</a></li>
+                <li><a href="agents.html">Mess Committee</a></li>         
+                <li><a href="displaymenu.php">Mess Menu</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+				
+				<li class="active"><a href="signup.html">Register</a></li>
+				
+				
+				<li>
+				<div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Login
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="login.html">STUDENT LOGIN</a></li>
+      <li><a href="admin.html">ADMIN LOGIN</a></li>
+    </ul>
+  </div>
+</div>
+</li>
+				
+				
+              </ul>
+            </div>
+            <!-- #Nav Ends -->
+
+          </div>
+        </div>
+
+    </div>
+<!-- #Header Starts -->
+
+
+
+
+<!-- #Header Starts -->
+
+
+
+
+
+<div class="container">
+
+
+
+
+
+
+
+
+
+
+<div id="emptyDiv">
+
+
+</div>
+<div id="description"></div>
+<!--container start-->
+<div id="container">
+  <div id="container_body">
+    <div>
+      <h2 class="form_title">Student Online Registration Form</h2>
+      
+<font size="5" color="#3380FF">PLEASE FILL IN ALL THE DETAILS:</font>
+    </div>
+    <!--Form  start-->
+    <div id="form_name">
+      <div class="firstnameorlastname">
+       <form name="form" action="signup.php" method="POST" onsubmit="return Submit()">
+       <div id="errorBox"></div>
+        <input type="text" name="Name" value="" placeholder="First Name"  class="input_name" >
+        <input type="text" name="LastName" value="" placeholder="Last Name" class="input_name" >
+        <div id="uid">
+        <input type="number" name="uid" value=""  placeholder="Your allotment id" class="uid">
+      </div>
+		
+      </div>
+      <div id="email_form">
+        <input type="text" name="Email" value=""  placeholder="Your Email" class="input_email">
+      </div>
+      
+      <div id="password_form">
+        <input type="password" name="Password" value=""  placeholder="New Password" class="input_password">
+      </div>
+<div id="Re_password_form">
+        <input type="password" name="enterpassword" value=""  placeholder="Re-enter password" class="input_Re_password">
+      </div>
+      <!--birthday details start-->
+      <div>
+        <h3 class="birthday_title">DETAILS</h3>
+      </div>
+      <div>
+        <select name="hostel" >
+          <option value="" selected >HOSTEL</option>
+          <option value="Hostel Block 1">Hostel Block 1</option>
+          <option value="Hostel Block 2">Hostel Block 2</option>
+          <option value="Hostel Block 3">Hostel Block 3</option>
+          <option value="Hostel Block 4">Hostel Block 4</option>
+          <option value="Hostel Block 5">Hostel Block 5</option>
+          <option value="Hostel Block 6 & 7">Hostel Block 6 & 7</option>
+          <option value="Hostel Block 6 New">Hostel Block 6 New</option>
+          <option value="Hostel Block 8 & 9">Hostel Block 8 & 9</option>
+          <option value="Hostel Block 10">Hostel Block 10</option>
+        </select>
+        &nbsp;&nbsp;
+        <select name="branch" >
+          <option value="" selected>BRANCH</option>
+          <option value="CSE">CSE</option>
+          <option value="ECE">ECE</option>
+          <option value="EEE">EEE</option>
+          <option value="MME">MME</option>
+          <option value="MEC">MEC</option>
+          <option value="MIN">MIN</option>
+          <option value="ARCHI">ARCHI</option>
+          <option value="CIV">CIV</option>
+          <option value="CHEM">CHEM</option>
+          <option value="PG">PG</option>
+          <option value="PHD">PHD</option>
+          
+        </select>
+        &nbsp;&nbsp;
+        <select name="year">
+          <option value="" selected>Year</option>
+          <option value="I YEAR">I YEAR</option>
+          <option value="II YEAR">II YEAR</option>
+          <option value="III YEAR">III YEAR</option>
+          <option value="IV YEAR">IV YEAR</option>
+          
+        </select>
+      </div>
+      <!--birthday details ends-->
+      <div id="radio_button">
+        <input type="radio" name="radiobutton" value="F">
+        <label >Female</label>
+        &nbsp;&nbsp;&nbsp;
+        <input type="radio" name="radiobutton" value="M">
+        <label >Male</label>
+      </div>
+       <div>
+	   <input id="sign_user" type="submit" ></input>
+      </div>
+     </form>
+    </div>
+    <!--form ends--> 
+  </div>
+</div>
+<!--container ends-->
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+
+
+<div class="row">
+            <div class="col-lg-3 col-sm-3">
+                   <h4>Information</h4>
+                   <ul class="row">
+                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="about.php">HOME</a></li>
+                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="agents.php">AGENTS</a></li>         
+                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="blog.php">BLOG</a></li>
+                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="contact.php">CONTACTS</a></li>
+              </ul>
+            </div>
+            
+            
+             <div class="col-lg-3 col-sm-3">
+                    <h4>Contact us</h4>
+                    <p><b>MESS MANAGEMENT COMMITEE.</b><br>
+<span class="glyphicon glyphicon-map-marker"></span> VNIT,SOUTH AMBAZARI ROAD <br>
+<span class="glyphicon glyphicon-envelope"></span> getphanesh.com<br>
+<span class="glyphicon glyphicon-earphone"></span> 999999999</p>
+            </div>
+        </div>
+</div></div>
+
+</body>
+</html>

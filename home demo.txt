@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="css1.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Fullscreen Slit Slider with CSS3 and jQuery" />
+        <meta name="keywords" content="slit slider, plugin, css3, transitions, jquery, fullscreen, autoplay" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="../favicon.ico"> 
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="css/custom.css" />
+		<script type="text/javascript" src="js/modernizr.custom.79639.js"></script>
+		<noscript>
+			<link rel="stylesheet" type="text/css" href="css/styleNoJS.css" />
+		</noscript>
+
+<style>
+.mySlides {display:none;}
+body {
+
+background-image: url(); 
+-moz-background-size: cover;
+-webkit-background-size: cover;
+background-size: cover;
+background-position: top center !important;
+background-repeat: no-repeat !important;
+background-attachment: fixed;
+background-opacity: 0.2;
+  
+  font: 12px Lucida sans, Arial, Helvetica, sans-serif;
+	color: #333;
+	text-align: center;
+}
+
+a {
+	color: #2A679F;
+}
+/*========*/
+
+.form-wrapper {
+	align: right;
+	background-color: #f6f6f6;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#f6f6f6), to(#eae8e8));
+	background-image: -webkit-linear-gradient(top, #f6f6f6, #eae8e8);
+	background-image: -moz-linear-gradient(top, #f6f6f6, #eae8e8);
+	background-image: -ms-linear-gradient(top, #f6f6f6, #eae8e8);
+	background-image: -o-linear-gradient(top, #f6f6f6, #eae8e8);
+	background-image: linear-gradient(top, #f6f6f6, #eae8e8);
+	border-color: #dedede #bababa #aaa #bababa;
+	border-style: solid;
+	border-width: 1px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: 0 3px 3px rgba(255,255,255,.1), 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 5px #444;
+	-moz-box-shadow: 0 3px 3px rgba(255,255,255,.1), 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 5px #444;
+	box-shadow: 0 3px 3px rgba(255,255,255,.1), 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 5px #444;
+	margin: 10px auto;
+	overflow: hidden;
+	padding: 8px;
+	width: 450px;
+}
+
+.form-wrapper #search {
+	align: right;
+	border: 1px solid #CCC;
+	-webkit-box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #FFF;
+	-moz-box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #FFF;
+	box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #FFF;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+  color: #999;
+	float: left;
+	font: 16px Lucida Sans, Trebuchet MS, Tahoma, sans-serif;
+	height: 20px;
+	padding: 10px;
+	width: 320px;
+}
+
+.form-wrapper #search:focus {
+	align: right;
+	border-color: #aaa;
+	-webkit-box-shadow: 0 1px 1px #bbb inset;
+	-moz-box-shadow: 0 1px 1px #bbb inset;
+	box-shadow: 0 1px 1px #bbb inset;
+	outline: 0;
+}
+
+.form-wrapper #search:-moz-placeholder,
+.form-wrapper #search:-ms-input-placeholder,
+.form-wrapper #search::-webkit-input-placeholder {
+	color: #999;
+	font-weight: normal;
+}
+
+.form-wrapper #submit {
+	background-color: #0483a0;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#31b2c3), to(#0483a0));
+	background-image: -webkit-linear-gradient(top, #31b2c3, #0483a0);
+	background-image: -moz-linear-gradient(top, #31b2c3, #0483a0);
+	background-image: -ms-linear-gradient(top, #31b2c3, #0483a0);
+	background-image: -o-linear-gradient(top, #31b2c3, #0483a0);
+	background-image: linear-gradient(top, #31b2c3, #0483a0);
+	border: 1px solid #00748f;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 1px 0 #FFF;
+	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 1px 0 #FFF;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 1px 0 #FFF;
+	color: #fafafa;
+	cursor: pointer;
+	height: 42px;
+	float: right;
+	font: 15px Arial, Helvetica;
+	padding: 0;
+	text-transform: uppercase;
+	text-shadow: 0 1px 0 rgba(0, 0 ,0, .3);
+	width: 100px;
+}
+
+.form-wrapper #submit:hover,
+.form-wrapper #submit:focus {
+	background-color: #31b2c3;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#0483a0), to(#31b2c3));
+	background-image: -webkit-linear-gradient(top, #0483a0, #31b2c3);
+	background-image: -moz-linear-gradient(top, #0483a0, #31b2c3);
+	background-image: -ms-linear-gradient(top, #0483a0, #31b2c3);
+	background-image: -o-linear-gradient(top, #0483a0, #31b2c3);
+	background-image: linear-gradient(top, #0483a0, #31b2c3);
+}
+
+.form-wrapper #submit:active {
+	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+	-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+	outline: 0;
+}
+
+.form-wrapper #submit::-moz-focus-inner {
+	border: 0;
+}
+
+</style>
+</head>
+<body>
+
+<img src="Visvesvaraya-National-Institute-of-Technology.png" alt="Mountain View" style="float:left;width:150px;height:150px;>
+<h1 style="font-size:10%"></h1> 
+<h1 style="color:#ECF316;">Visvesvaraya National Institute of Technology</h1>
+<div class="tab">
+
+  <a href="home.html" class="tablinks">Home</a>
+  <a href="menu.htm" class="tablinks" >Mess Menu</a>
+  <a href="iframe.html" class="tablinks" >Contact</a>
+  <a href="login.html" class="tablinks">Login</a>
+  <a href="signup.html" class="tablinks">Register</a>
+</div>
+
+<form class="form-wrapper">
+    <input align="right" type="text" id="search" placeholder="Search for..." required>
+    <input type="submit" value="go" id="submit">
+</form>
+<marquee scrollamount="13" width="100%" bgcolor="#000000"><font size="5" color="#FFCCFF" behavior="scroll" direction="left" onmousedown="this.stop();" onmouseup="this.start();">The mess menu has been changed according to the online voting. &nbsp &nbsp &nbsp &nbsp 	New mess menu will be implemented from 14-02-2017 onwards.	&nbsp &nbsp &nbsp &nbsp 	Students who haven't registered for the veg/non-veg sections will not be served on feast days.	&nbsp &nbsp &nbsp &nbsp 	Students must follow the rules under token system.</font></marquee>
+
+
+<div class="container demo-2">
+		
+			
+
+            <header class="clearfix">
+			
+			
+				
+			</header>
+
+            <div id="slider" class="sl-slider-wrapper">
+
+				<div class="sl-slider">
+				
+					<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+						<div class="sl-slide-inner">
+							<div class="bg-img bg-img-1"></div>
+							<h2>A bene placito.</h2>
+							<blockquote><p>You have just dined, and however scrupulously the slaughterhouse is concealed in the graceful distance of miles, there is complicity.</p><cite>Ralph Waldo Emerson</cite></blockquote>
+						</div>
+					</div>
+					
+					<div class="sl-slide" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
+						<div class="sl-slide-inner">
+							<div class="bg-img bg-img-2"></div>
+							<h2>Regula aurea.</h2>
+							<blockquote><p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p><cite>Albert Schweitzer</cite></blockquote>
+						</div>
+					</div>
+					
+					<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
+						<div class="sl-slide-inner">
+							<div class="bg-img bg-img-3"></div>
+							<h2>Dum spiro, spero.</h2>
+							<blockquote><p>Thousands of people who say they 'love' animals sit down once or twice a day to enjoy the flesh of creatures who have been utterly deprived of everything that could make their lives worth living and who endured the awful suffering and the terror of the abattoirs.</p><cite>Dame Jane Morris Goodall</cite></blockquote>
+						</div>
+					</div>
+					
+					<div class="sl-slide" data-orientation="vertical" data-slice1-rotation="-5" data-slice2-rotation="25" data-slice1-scale="2" data-slice2-scale="1">
+						<div class="sl-slide-inner">
+							<div class="bg-img bg-img-4"></div>
+							<h2>Donna nobis pacem.</h2>
+							<blockquote><p>The human body has no more need for cows' milk than it does for dogs' milk, horses' milk, or giraffes' milk.</p><cite>Michael Klaper M.D.</cite></blockquote>
+						</div>
+					</div>
+					
+					<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
+						<div class="sl-slide-inner">
+							<div class="bg-img bg-img-5"></div>
+							<h2>Acta Non Verba.</h2>
+							<blockquote><p>I think if you want to eat more meat you should kill it yourself and eat it raw so that you are not blinded by the hypocrisy of having it processed for you.</p><cite>Margi Clarke</cite></blockquote>
+						</div>
+					</div>
+				</div><!-- /sl-slider -->
+
+				<nav id="nav-dots" class="nav-dots">
+					<span class="nav-dot-current"></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</nav>
+
+        </div>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.ba-cond.min.js"></script>
+		<script type="text/javascript" src="js/jquery.slitslider.js"></script>
+		<script type="text/javascript">	
+			$(function() {
+			
+				var Page = (function() {
+
+					var $nav = $( '#nav-dots > span' ),
+						slitslider = $( '#slider' ).slitslider( {
+							onBeforeChange : function( slide, pos ) {
+
+								$nav.removeClass( 'nav-dot-current' );
+								$nav.eq( pos ).addClass( 'nav-dot-current' );
+
+							}
+						} ),
+
+						init = function() {
+
+							initEvents();
+							
+						},
+						initEvents = function() {
+
+							$nav.each( function( i ) {
+							
+								$( this ).on( 'click', function( event ) {
+									
+									var $dot = $( this );
+									
+									if( !slitslider.isActive() ) {
+
+										$nav.removeClass( 'nav-dot-current' );
+										$dot.addClass( 'nav-dot-current' );
+									
+									}
+									
+									slitslider.jump( i + 1 );
+									return false;
+								
+								} );
+								
+							} );
+
+						};
+
+						return { init : init };
+
+				})();
+
+				Page.init();
+
+				/**
+				 * Notes: 
+				 * 
+				 * example how to add items:
+				 */
+
+				/*
+				
+				var $items  = $('<div class="sl-slide sl-slide-color-2" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1"><div class="sl-slide-inner bg-1"><div class="sl-deco" data-icon="t"></div><h2>some text</h2><blockquote><p>bla bla</p><cite>Margi Clarke</cite></blockquote></div></div>');
+				
+				// call the plugin's add method
+				ss.add($items);
+
+				*/
+			
+			});
+		</script>
+
+
+
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+
+<font size="5.5" color="#A02623" >Welcome to our NEW WEBSITE. This site supports polls, forums and a lot more goodies. We encourage you to create account just once, so you could enjoy all those functionalities. Creating your account is safe and simple; needs just your Hostel allotment number and EMail address (so you may recover your password if ever you lose it). </font>
+<br/>
+<br/>
+<br/>
+<marquee bgcolor=YELLOW width=85% height=160 direction=up><font color="blue" face="goudy old style" size="6"> * &nbsp !!!Last date for challan submission: 28-02-2017.<br><br>
+ * &nbsp Elections for Mess Council 2017-18 will be held in the month of march.<br><br>
+ * &nbsp Friday menu will be followed on 19-02-2017 due to lack of electricity.<br><br>
+ * &nbsp Mess review option has been updated!!!<br>
+</A> </marquee>
+
+
+</body>
+</html>
